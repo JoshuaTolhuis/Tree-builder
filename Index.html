@@ -9,7 +9,9 @@
 
 <form action="/uploadfile" id="upload">
     <input type="file" id="phylofile" name="filename">
-        <select>
+    <input type="text" id="uname" name="uname" value="JohnDoe" required="">
+    <input type="text" id="email" name="email" required="">
+        <select id="phylotype">
             <option value="1">Fasta</option>
             <option value="1">Newick</option>
             <option value="1">Text</option>
@@ -17,8 +19,7 @@
     <input type="submit">
   </form>
 
-<script>
-</script>
+<script src="Index.js"></script> 
 
 </body>
 </html>
