@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html>
 <head>
     <title>Tree-Builder</title>
@@ -7,19 +8,15 @@
 <h1>Tree-Builder</h1>
 <p id="description">A website that allows to visualize phylogenetic trees.</p>
 
-<form action="/uploadfile" id="upload">
+<form action="/form" method=POST>
     <input type="file" id="phylofile" name="filename">
-    <input type="text" id="uname" name="uname" value="JohnDoe" required="">
-    <input type="text" id="email" name="email" required="">
         <select id="phylotype">
-            <option value="1">Fasta</option>
-            <option value="1">Newick</option>
-            <option value="1">Text</option>
+            <option value="Fasta">Fasta</option>
+            <option value="Newick">Newick</option>
+            <option value="Text">Text</option>
         </select>
-    <input type="submit">
+    <input type="submit" name = "submit" value = "submit">
   </form>
-
-<script src="Index.js"></script> 
 
 </body>
 </html>
