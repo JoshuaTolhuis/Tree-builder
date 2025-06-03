@@ -6,7 +6,7 @@ router.get('/', (req, res) =>{
 });
 
 router.get('/:username', (req, res) => {
-    res.send(`<h1>This is ${req.params.username}'s profile!</h1>`)
+    res.render('profile', { username: req.params.username });
 });
 
 module.exports = router;
