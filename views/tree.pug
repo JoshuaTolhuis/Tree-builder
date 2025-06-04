@@ -3,8 +3,12 @@ html
     head 
     title Tree-builder
     link(rel ='stylesheet' href= 'css/index.css')
+    link(rel="stylesheet" href="//veg.github.io/phylotree.js/phylotree.css")
+    script(src="//d3js.org/d3.v3.min.js")
+    script(src="//veg.github.io/phylotree.js/phylotree.js")
+    script(src="//code.jquery.com/jquery.js")
+    script(src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js")
     body 
-        img(src="imagine logo here")
-        h1 Tree-Builder
-        #canvas
-        
+        h1 Tree-builder
+        p=newickData
+        div#tree-container

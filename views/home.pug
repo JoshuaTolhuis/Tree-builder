@@ -7,10 +7,10 @@ html
         img(src="imagine logo here")
         h1 Tree-Builder
         #container 
-            form(action = '/posts' method="POST")
+            form(action='/posts' method="POST" enctype="multipart/form-data")
                 h2 Please select a file and the corresponding file type
                 label File:
-                input(type='file' name ='filename')
+                input(type='file' name ='datafile')
                 label Filetype:
                 select(name = 'phylotype')
                     option(value="Newick") Newick

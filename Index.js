@@ -15,7 +15,6 @@ app.set('view engine', 'pug');
 app.set('views', path.join(__dirname, 'views'));
 
 app.use('/posts', posts);
-app.use('/users', users)
 
 app.get('/', (req,res) => {
     res.render('home');
