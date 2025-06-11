@@ -38,6 +38,7 @@ form{
     width: 800px;
     border-radius: 40px;
     padding-left: 5px;
+    padding-top: 10px;
 }
 input:not([type='submit']){
     width: 250px;
@@ -46,19 +47,26 @@ input:not([type='submit']){
     border: transparent;
     padding: 2px 0 2px 5px;
     margin: 10px 0;
+    color:#333333
+    
 }
 input[type='submit'] {
     font-size: 1.2em;
-    border: none;
     margin-top: 5px;
+    border:none;
     border-radius: 5px;
+    background-color: darkcyan;
+    color: white;
 }
 select{
     font-size: 1.2em;
-    border: none;
     margin-top: 5px;
     border-radius: 5px;
-    background-color: darkseagreen;
+    border-style: solid;
+    background-color: white;
+    border-color: darkcyan;
+    color: #333333;
+    
 }
 label{
     font-weight: bold;

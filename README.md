@@ -15,5 +15,5 @@ For example:
 `npm install Express.js`
 
 # How to run
-In order to run the webpage please open up the commandline and navigate to the location of the installed github folder.  
+In order to run the webpage please open up the commandline and navigate to the location of the installed github folder.
 When located within the github folder run the command `node index.js`. This should start the webpage on https://localhost:3000.  

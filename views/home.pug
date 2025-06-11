@@ -6,14 +6,65 @@ html
     body 
         img(src="imagine logo here")
         h1 Tree-Builder
-        #container 
-            form(action='/posts' method="POST" enctype="multipart/form-data")
-                h2 Please select a file and the corresponding file type
-                label File:
-                input(type='file' name ='datafile')
-                label Filetype:
-                select(name = 'phylotype')
+        #container
+            form(action="/posts" method="POST" enctype="multipart/form-data")
+                label Upload a File (.nwk, .fasta, .txt):
+                input(type="file" name="datafile" accept=".nwk,.txt,.fa,.fasta")
+                br
+
+                label Or paste Newick string:
+                textarea(name="newickText" id="newickInput" rows="4" cols="50")
+                br
+
+                label Format:
+                select(name="phylotype")
                     option(value="Newick") Newick
-                    option(value="Fasta") Fasta
-                    option(value="Text") Text         
-                input(type='submit' name = 'submit')
+                    option(value="Fasta") FASTA
+                    option(value="Text") Text
+                br
+
+                button(type="submit") Submit
+        script.
+            function validateNewick(str) {
+            // Very basic check: starts with "(" and ends with ";"
+                return str.trim().startsWith('(') && str.trim().endsWith(';');
+            }
+            function toggleInputs() {
+                const fileInput = document.querySelector('input[type="file"]');
+                const textInput = document.getElementById('newickInput');
+
+                if (textInput.value.trim() !== '') {
+                fileInput.disabled = true;
+                } else {
+                fileInput.disabled = false;
+                }
+
+                if (fileInput.files.length > 0) {
+                textInput.disabled = true;
+                } else {
+                textInput.disabled = false;
+                }
+            }
+            function validateForm(event) {
+                const newickText = document.getElementById('newickInput').value.trim();
+                const fileInput = document.querySelector('input[type="file"]');
+
+                if (newickText !== '') {
+                if (!validateNewick(newickText)) {
+                    alert("Invalid Newick format. Must start with '(' and end with ';'");
+                    event.preventDefault();
+                }
+                } else if (fileInput.files.length === 0) {
+                alert("Please either paste Newick text or select a file.");
+                event.preventDefault();
+                }
+            }
+            document.addEventListener('DOMContentLoaded', () => {
+                const fileInput = document.querySelector('input[type="file"]');
+                const textInput = document.getElementById('newickInput');
+                const form = document.querySelector('form');
+
+                fileInput.addEventListener('change', toggleInputs);
+                textInput.addEventListener('input', toggleInputs);
+                form.addEventListener('submit', validateForm);
+            });
