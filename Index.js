@@ -4,7 +4,6 @@ const path = require('path');
 const PORT = 3000;
 
 const posts = require('./routes/posts');
-const users = require('./routes/users');
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true}));
