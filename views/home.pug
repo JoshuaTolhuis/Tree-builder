@@ -26,19 +26,28 @@ html
                 button(type="submit") Submit
         script.
             function validateNewick(str) {
-            // Very basic check: starts with "(" and ends with ";"
+                /*
+                Input str: The text string of the text input from the form.
+                Function for validating the text input in the form, very basic check: starts with "(" and ends with ";"
+                Return: Boolean with true or false
+                */
                 return str.trim().startsWith('(') && str.trim().endsWith(';');
             }
             function toggleInputs() {
+                /*
+                Function for toggling on/off either the text field or the file browser.
+                */
                 const fileInput = document.querySelector('input[type="file"]');
                 const textInput = document.getElementById('newickInput');
 
+                // Turn off file browser if text is inserted.
                 if (textInput.value.trim() !== '') {
                 fileInput.disabled = true;
                 } else {
                 fileInput.disabled = false;
                 }
 
+                // Turn of text input is file is inserted.
                 if (fileInput.files.length > 0) {
                 textInput.disabled = true;
                 } else {
@@ -46,6 +55,10 @@ html
                 }
             }
             function validateForm(event) {
+                /*
+                Input event: the submit button activates this function
+                Function for validation of the insert newick file and text. Throws alert if text is not validated or if both text and file are empty.
+                */
                 const newickText = document.getElementById('newickInput').value.trim();
                 const fileInput = document.querySelector('input[type="file"]');
 
@@ -59,6 +72,8 @@ html
                 event.preventDefault();
                 }
             }
+
+            // Document event listener
             document.addEventListener('DOMContentLoaded', () => {
                 const fileInput = document.querySelector('input[type="file"]');
                 const textInput = document.getElementById('newickInput');
