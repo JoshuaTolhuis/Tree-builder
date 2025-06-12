@@ -1,0 +1,29 @@
+{
+  "name": "tree-builder",
+  "version": "1.0.0",
+  "description": "A website that visualizes a phylogenetic tree",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JoshuaTolhuis/Tree-builder.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JoshuaTolhuis/Tree-builder/issues"
+  },
+  "homepage": "https://github.com/JoshuaTolhuis/Tree-builder#readme",
+  "dependencies": {
+    "d3-zoom": "^3.0.0",
+    "express": "^5.1.0",
+    "phylotree": "^0.1.6",
+    "pug": "^3.0.3"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.10"
+  }
+}
