@@ -1,5 +1,6 @@
 *{
-    font-family: Arial, Helvetica, sans-serif;
+    font-family:Helvetica, sans-serif;
+    color: #333333;
 }
 
 body{
@@ -8,10 +9,11 @@ body{
     display: flex;
     flex-direction: column;
     margin: 0;
+    background-color: #FEFFF7;
 }
 img{
     height: 70px;
-    width: 100vw;
+    width: 550px;
 }
 h1{
     border: none;
@@ -24,10 +26,9 @@ h1{
     padding-left: 10px;
 }
 
-#container {
+#tree-container {
     display: flex;
-    justify-content: left;
-    flex-direction: column; 
+    width: 100vw;
 }
 form{
     display:flex;
@@ -50,14 +51,7 @@ input{
     color:#333333
     
 }
-button{
-    font-size: 1.2em;
-    margin-top: 5px;
-    border:none;
-    border-radius: 5px;
-    background-color: darkcyan;
-    color: white;
-}
+
 select{
     font-size: 1.2em;
     margin-top: 5px;
@@ -86,3 +80,59 @@ textarea{
     color: #333333;
     opacity: 1;
 }
+
+#submit{
+    font-size: 1.2em;
+    background-color: darkcyan;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    margin-top: 2px;
+}
+button{
+    font-size: 1.2em;
+    background-color: white;
+    border: none;
+}
+button:hover{
+    background-color:lightgrey;
+}
+
+#Controls{
+    display:flex;
+    justify-content: left;
+    flex-direction: row;
+    padding-left: 5px;
+    margin-top: 5px;
+}
+#Style{
+    border-style: solid;
+    border-color: darkcyan;
+    border-radius: 5px;
+}
+#Align{
+    border-style: solid;
+    border-color: darkcyan;
+    border-radius: 5px;
+    margin-left: 5px;
+}
+#Download{
+    border-style: solid;
+    border-color: darkcyan;
+    border-radius: 5px;
+    margin-left: 5px;
+}
+#reset{
+    font-size: 1.2em;
+    width: 100px;
+    background-color: darkcyan;
+    color:white;
+    border-radius:5px;
+    margin-left: 5px;
+    margin-top: 2px;
+}
+#reset:hover{
+    background-color: #003838;
+}
+
+

@@ -4,8 +4,8 @@ html
     title Tree-builder
     link(rel ='stylesheet' href= 'css/index.css')
     body 
-        img(src="imagine logo here")
-        h1 Tree-Builder
+        img(src="banner.png")
+        h1 Tree Builder
         #container
             form(action="/posts" method="POST" enctype="multipart/form-data")
                 label Upload a File (.nwk, .fasta, .txt):
@@ -23,7 +23,7 @@ html
                     option(value="Text") Text
                 br
 
-                button(type="submit") Submit
+                button(type="submit" value="submit" id="submit") Submit
         script.
             function validateNewick(str) {
                 /*
