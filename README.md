@@ -25,7 +25,19 @@ The user should be greeted with this view:
 From here the user can insert the file of their choosing: Newick, Fasta or txt Files work with this setup. 
 *important* dont forget to select the right corresponding type with the selection button when using a file as input.  
 
-It is also possible to insert a text inside the text field, do note this only responds to Newick type texts.
+It is also possible to insert a text inside the text field, do note this only responds to Newick type texts.  
+
+After the file has been sent the user will be greeted with a rendered tree of their file/text.  
+It should look like something like this:  
+(scnd image here)
+
+The buttons work as follows from left to right:
+- Linear, creates a linear tree (this is default).  
+- Radial, creates a circulair tree.  
+- Align left, creates a tree aligned to the left (this is default).  
+- Align right, creates a tree aligned to the right.  
+- Download, downloads a copy of the rendered tree.  
+- Reset, resets the tree back to it's origin. (might be useful when having deleted several nodes).  
 
 # Dependencies.
 In order to use this program this user needs to have installed before:
