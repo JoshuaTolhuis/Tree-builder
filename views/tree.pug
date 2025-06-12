@@ -29,7 +29,7 @@ html
         svg#tree-container
         script.
             const width = 1000;
-            const height = 250;
+            const height = 300;
 
             const svg = d3.select("#tree-container")
                 .attr("width", width)
@@ -56,12 +56,13 @@ html
                     // show nodes
                     'nodes' : true,
                     // layout alignment
+                    'is-radial': false
                 });
 
 
             function setLinearLayout() {
                 tree.size([width,height])
-                .spacing_y(20)
+                .spacing_y(55)
                 .spacing_x(20)
                 .layout().options({'is-radial': false}).update_layout();
                 tree.layout(newick);
@@ -75,13 +76,12 @@ html
             };
             function alignLeft() {
                 tree.layout()
-                .spacing_y(55)
-                .spacing_x(55)
                 .options({'align-tips' : false}).update_layout();
                 tree.layout(newick);
             };
             function alignRight() {
-                tree.layout().options({'align-tips' : true}).update_layout();
+                tree.layout()
+                .options({'align-tips' : true}).update_layout();
                 tree.layout(newick);
             };
 
@@ -145,7 +145,7 @@ html
                         'transitions': true,
                         // show nodes
                         'nodes' : true,
-                        'max-radius' : 1000
+                        'is-radial': false
                 });
             }
 
