@@ -21,7 +21,7 @@ When located within the github folder run the command `node index.js`. This shou
 # How to use
 After the code has been started. The user can go to https://localhost:3000.  
 The user should be greeted with this view:  
-(img here)  
+![home page](public/home-page.png)
 From here the user can insert the file of their choosing: Newick, Fasta or txt Files work with this setup. 
 *important* dont forget to select the right corresponding type with the selection button when using a file as input.  
 
@@ -29,8 +29,8 @@ It is also possible to insert a text inside the text field, do note this only re
 
 After the file has been sent the user will be greeted with a rendered tree of their file/text.  
 It should look like something like this:  
-(scnd image here)
 
+![tree drawer](public/tree-page.png)
 The buttons work as follows from left to right:
 - Linear, creates a linear tree (this is default).  
 - Radial, creates a circulair tree.  
