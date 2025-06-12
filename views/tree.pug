@@ -5,6 +5,7 @@ html
         
         link(rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css")
         link(rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css")
+        link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css")
         link(rel="stylesheet" href="//veg.github.io/phylotree.js/phylotree.css" )
 
         script(src="//code.jquery.com/jquery.js")
@@ -18,15 +19,19 @@ html
         h1 Tree Builder
         div#Controls
             div#Style
-                button(id= "linear" onclick="setLinearLayout()") Linear
+                button(id= "linear" onclick="setLinearLayout()") Linear  
                 button(id= "radial" onclick="setRadialLayout()") Radial
             div#Align
-                button(id= "left" onclick="alignLeft()") Align left
-                button(id= "right" onclick="alignRight()") Align right
+                button(id= "left" onclick="alignLeft()") 
+                    i(class="fa fa-align-left")
+                button(id= "right" onclick="alignRight()") 
+                    i(class="fa fa-align-right")
             div#Download
-                button(id= "right" "onclick"= "downloadSVG()") Download SVG
+                button(id= "right" "onclick"= "downloadSVG()")
+                    i(class="fa-solid fa-download")
             div#Reset
-                button(id= "reset" onclick="resetTree()") Reset
+                button(id= "reset" onclick="resetTree()") Reset  
+                    i(class="fas fa-rotate-right" id="resetIcon")
 
         svg#tree-container
         script.

@@ -135,4 +135,6 @@ button:hover{
     background-color: #003838;
 }
 
-
+#resetIcon{
+    color:white;
+}
