@@ -3,6 +3,8 @@ html
     head 
         title Tree Builder
         
+        link(rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css")
+        link(rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css")
         link(rel="stylesheet" href="//veg.github.io/phylotree.js/phylotree.css" )
 
         script(src="//code.jquery.com/jquery.js")
@@ -16,15 +18,15 @@ html
         h1 Tree Builder
         div#Controls
             div#Style
-                button(value = "Linear" id= "linear" onclick="setLinearLayout()") Linear
-                button(value = "Radial" id= "radial" onclick="setRadialLayout()") Radial
+                button(id= "linear" onclick="setLinearLayout()") Linear
+                button(id= "radial" onclick="setRadialLayout()") Radial
             div#Align
-                button(value = "AlignLeft" id= "left" onclick="alignLeft()") Align left
-                button(value = "AlignRight" id= "right" onclick="alignRight()") Align right
+                button(id= "left" onclick="alignLeft()") Align left
+                button(id= "right" onclick="alignRight()") Align right
             div#Download
-                button(value = "Download" id= "right" "onclick"= "downloadSVG()") Download SVG
+                button(id= "right" "onclick"= "downloadSVG()") Download SVG
             div#Reset
-                button(value = "Reset" id= "reset" onclick="resetTree()") Reset
+                button(id= "reset" onclick="resetTree()") Reset
 
         svg#tree-container
         script.
@@ -42,7 +44,8 @@ html
 
             let tree = d3.layout.phylotree()
                 .svg(svg)
-
+            
+            // Rendering the tree with standard parameters
             tree(newick)
                 .size([width,height])
                 .spacing_y(55)
@@ -61,6 +64,9 @@ html
 
 
             function setLinearLayout() {
+                /*
+                Function for creating a linear phylotree instead of a radial one.
+                */
                 tree.size([width,height])
                 .spacing_y(55)
                 .spacing_x(20)
@@ -68,6 +74,9 @@ html
                 tree.layout(newick);
             };
             function setRadialLayout() {
+                /*
+                Function for creating a radial phylotree instead of a linear one.
+                */
                 tree.layout()
                 .spacing_y(55)
                 .spacing_x(55)
@@ -75,17 +84,26 @@ html
                 tree.layout(newick);
             };
             function alignLeft() {
+                /*
+                Function for aligning the  phylotree instead on the left in contrary to aligning it on the right.
+                */
                 tree.layout()
                 .options({'align-tips' : false}).update_layout();
                 tree.layout(newick);
             };
             function alignRight() {
+                /*
+                Function for aligning the  phylotree instead on the right in contrary to aligning it on the left.
+                */
                 tree.layout()
                 .options({'align-tips' : true}).update_layout();
                 tree.layout(newick);
             };
 
             async function downloadSVG() {
+                /*
+                Function for downloading a SVG image of the tree with styling atached.
+                */
                 const svgElement = document.querySelector("#tree-container");
 
                 if (!svgElement) {
@@ -129,6 +147,9 @@ html
                 }
 
             function resetTree() {
+                /*
+                Function for reseting the tree, important for if nodes have been deselected/hidden.
+                */
                 d3.select("#tree-container").select("svg").remove();
                 const newSvg = d3.select("#tree-container").append("svg");
                 let tree = d3.layout.phylotree()
