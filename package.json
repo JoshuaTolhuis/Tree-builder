@@ -18,7 +18,6 @@
   },
   "homepage": "https://github.com/JoshuaTolhuis/Tree-builder#readme",
   "dependencies": {
-    "d3-zoom": "^3.0.0",
     "express": "^5.1.0",
     "phylotree": "^0.1.6",
     "pug": "^3.0.3"
